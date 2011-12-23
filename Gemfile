@@ -23,6 +23,21 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+	gem 'rspec-rails', "= 2.6.1"
+	gem 'slim-rails'
+end
+
+group :test do
+	gem 'rspec-rails', "= 2.6.1"
+	gem 'cucumber-rails'
+	gem 'factory_girl_rails', "1.0.1"
+	gem 'factory_girl', "1.3.3"
+	gem 'faker', "1.0.1"
+# Pretty printed test output
+  gem 'turn', :require => false
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -32,7 +47,3 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-end
