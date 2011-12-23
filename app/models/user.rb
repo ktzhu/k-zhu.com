@@ -11,7 +11,7 @@ class User
 	timestamps!
 	
 	attr_accessible :password_confirmation
-	attr_protected :admin
+	# attr_protected :admin
 
 	validates :password, :confirmation => true
 	validate :password_must_be_present
