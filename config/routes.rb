@@ -4,6 +4,17 @@ KZhuCom::Application.routes.draw do
 	match "project/:slug" => "projects#show", :as => :project
 	resources :projects, :as => :project
 
+	# Admin
+	get "admin" => "admin#index"
+	
+	resources :users
+
+	controller :sessions do
+		get 'login' => :new
+		post 'login' => :create
+		delete 'logout' => :destroy
+	end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
