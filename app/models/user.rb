@@ -5,15 +5,14 @@ class User
 
 	key :user_id, ObjectId 
 	key :name, String, :required => true, :unique => true
-	key :password, String 
+	key :hashed_password, String 
 	key :email, String
+	key :salt, String
 	key :admin, Boolean
 	timestamps!
 	
 	attr_accessible :password_confirmation
-	# attr_protected :admin
 
-	validates :password, :confirmation => true
 	validate :password_must_be_present
 
 	def User.authenticate(name, password)
@@ -25,7 +24,7 @@ class User
 	end
 
 	def User.encrypt_password(password, salt)
-		Digest::SHA2.hexdigest(password + "wibble" + salt)
+		Digest::SHA2.hexdigest(password + "nerd" + salt)
 	end
 
 	def password=(password)

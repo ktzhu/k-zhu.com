@@ -2,11 +2,11 @@ class UsersController < ApplicationController
 	skip_before_filter :authorize
 
 	def index
-		@users = User.order(:name)
+		@users = User.all
 	end
 	
 	def show
-		@user = User.find_by_name!(params[:name])
+		@user = User.find(params[:id])
 	end
 
 	def new
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 	end
 	
 	def edit
-		@user = User.find_by_name!(params[:name])
+		@user = User.find(params[:id])
 	end
 
 	def create
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find_by_name!(params[:name])
+		@user = User.find(params[:id])
 		if @user.update_attributes(params[:user])
 			redirect_to(users_url, :notice => "Boom. You've updated user #{@user.name}.")
 		else
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		@user = User.find_by_name!(params[:name])
+		@user = User.find(params[:id])
 		@user.destroy
 		
 		redirect_to(users_url)
