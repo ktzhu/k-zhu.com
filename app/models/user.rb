@@ -11,7 +11,7 @@ class User
 	key :admin, Boolean
 	timestamps!
 	
-	attr_accessible :password_confirmation
+	attr_accessible :name, :password, :password_confirmation
 
 	validate :password_must_be_present
 
