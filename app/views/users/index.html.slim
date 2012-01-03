@@ -10,4 +10,4 @@ p
 	.actions 
 		= link_to "Show", user
 		= link_to "Edit", edit_user_path(user)
-		= link_to "Destroy", user, :confirm => "No but really?", :method => :delete
+		= button_to "Delete this user", user, :confirm => "No but really?", :method => :delete, :class => :destroy
