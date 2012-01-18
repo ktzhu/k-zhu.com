@@ -11,4 +11,10 @@ class Project
 	key :link, String
 	key :image, String
 	timestamps!
+
+	attr_accessible :name, :slug, :blurb, :content, :client, :skills, :link, :image
+
+	def to_param
+		slug
+	end
 end

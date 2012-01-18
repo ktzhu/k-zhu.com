@@ -1,0 +1,52 @@
+= form_for(@project) do |f|
+	- if @project.errors.any?
+		strong = pluralize(@project.errors.count, "error") + " -- could not save your project."
+
+		ul
+			- @project.errors.full_messages.each do |msg|
+				li = msg
+	
+	fieldset#newProject
+		.field
+			= f.label :name
+			= f.text_field :name
+
+		.field
+			= f.label :slug
+			= f.text_field :slug
+
+		.field
+			= f.label :blurb
+			= f.text_area(:blurb, :size => "20x3")
+		
+		.field
+			= f.label :content
+			= f.text_area(:content, :size => "20x10")
+		
+		.field
+			= f.label :client
+			= f.text_field :client
+		
+		.field
+			label for="project_skills" Skills:
+			input id="project_skills" name="project[skills][]" size="20" type="text"
+			p
+			input id="project_skills" name="project[skills][]" size="20" type="text"
+			p
+			input id="project_skills" name="project[skills][]" size="20" type="text"
+			p
+			input id="project_skills" name="project[skills][]" size="20" type="text"
+			p
+			input id="project_skills" name="project[skills][]" size="20" type="text"
+
+			
+		.field
+			= f.label :link
+			= f.text_field :link
+
+		.field
+			= f.label :image, "Image (URL only)"
+			= f.text_field :image
+		
+		.actions
+			= f.submit

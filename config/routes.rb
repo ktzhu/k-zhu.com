@@ -1,8 +1,8 @@
 KZhuCom::Application.routes.draw do
 	root :to => "projects#index"
-
-	match "project/:slug" => "projects#show", :as => :project
-	resources :projects, :as => :project
+	
+	# match "project/:slug" => "projects#show", :as => :project
+	resources :projects
 
 	# Admin
 	get "admin" => "admin#index"
