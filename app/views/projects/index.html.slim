@@ -1,8 +1,15 @@
 h1 Let's rap.
-h3 Put this in your pipe
-em and smoke it
 
+ul
+  li = link_to 'About', about_index_path
+  li = link_to 'Contact', contact_path
+  li = link_to 'Labs', labs_path
+
+h2 Projects
 - @projects.each do |project|
-	h2 = project.name
+  li
+    h4 = project.name
 
-a href="/login" Login
+ul
+  li = link_to 'Admin', admin_path
+  li = link_to 'Login', login_path
