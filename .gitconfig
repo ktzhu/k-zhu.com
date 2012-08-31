@@ -1,0 +1,8 @@
+.DS_Store
+**.swp
+/.bundle
+/log/*.log
+/tmp
+/config/config.yml
+/gems
+**.orig
