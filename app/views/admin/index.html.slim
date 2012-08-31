@@ -1,25 +1,25 @@
-h1 Welcome ADMIN
-	! You have logged in.
+h1 Welcome ADMIN!!
+| You have logged in.
 p
 
 - if notice
-	= notice
+  = notice
 
 = link_to "Add project", new_project_path
-'  |
+|  | 
 = link_to "Add user", new_user_path
 
 h2 Listing Projects
 
 - @projects. each do |project|
-	.label
-		= project.name
-		= project.blurb
-		= project.content
-		= project.client
-		= project.skills
-		= image_tag(project.image)
-	.actions
-		= link_to "Show", project
-		= link_to "Edit", edit_project_path(project)
-		= button_to "Delete this project", project, :confirm => "No fo realz?", :method => :delete, :class => :destroy
+  .label
+    p = project.name
+    p = project.blurb
+    p = project.content
+    p = project.client
+    p = project.skills
+    p = image_tag(project.image)
+  .actions
+    p = link_to "Show", project
+    p = link_to "Edit", edit_project_path(project)
+    p = button_to "Delete this project", project, :confirm => "No fo realz?", :method => :delete, :class => :destroy
